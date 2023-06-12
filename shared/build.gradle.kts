@@ -32,7 +32,12 @@ kotlin {
             dependencies {
                 //put your multiplatform dependencies here
                 implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.4.0")
-                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.1")
+                /**
+                 * as a workaround, keep this version until ktor v2.3.2 is released
+                 * to avoid the internal compilation error reported in the issue below
+                 * ref: https://youtrack.jetbrains.com/issue/KTOR-5728
+                 */
+                implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
                 implementation("io.ktor:ktor-client-core:$ktorVersion")
                 implementation("io.ktor:ktor-client-content-negotiation:$ktorVersion")
                 implementation("io.ktor:ktor-serialization-kotlinx-json:$ktorVersion")
